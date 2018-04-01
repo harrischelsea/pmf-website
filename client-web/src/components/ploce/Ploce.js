@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import './Ploce.css';
 import { Segment, Header, List } from 'semantic-ui-react';
@@ -14,7 +15,7 @@ class Ploce extends Component {
                     <Header className='ploca-heading' size='small'>{this.props.name}</Header>
                     <List>
                         {this.props.news.map( el =>
-                        <List.Item>
+                        <List.Item as={NavLink} to={'/vijest/' + el.id}>
                             <div className='date'>
                                 <div className='day'>{new Date(el.createdAt).getDate()}</div>
                                 <div className='month'>{monthNames[new Date(el.createdAt).getMonth()]}</div>

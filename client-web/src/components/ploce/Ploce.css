@@ -19,6 +19,7 @@ div.ui.small.header.ploca-heading {
     color: #1d92ca !important;
     padding: 10px;
     border-bottom: 3px solid #1d92ca;
+    text-transform: uppercase;
 }
 div.ui.tiny.header.see-all {
     background: #1d92ca !important;

@@ -13,4 +13,15 @@ router.get('/get-all-op', function(req, res, next) {
             res.status(400).send({err: 'Bad request!'}));
 });
 
+router.get('/get-current-news/:id', function(req, res, next) {
+    let { id } = req.params;
+    models.Op.findOne({ where: {
+            id: id
+        }})
+        .then( news => {
+            res.send(news);
+        }).catch(err =>
+        res.status(400).send({err: 'Bad request!'}));
+});
+
 module.exports = router;
