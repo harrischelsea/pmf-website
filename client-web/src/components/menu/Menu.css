@@ -1,0 +1,40 @@
+div.row, div.centered.row {
+    padding-bottom: 5px !important;
+    margin-bottom: 0 !important;
+}
+div.centered.row {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+div.ui.compact.fluid.inverted.pointing.secondary.stackable.navbar-main-menu.menu {
+    padding: 10px;
+    border: none;
+    border-bottom: none;
+}
+.ui.secondary.inverted.pointing.menu .item {
+    font-family: Arial;
+    color: black !important;
+}
+.ui.secondary.inverted.pointing.menu .item:hover {
+    color: grey !important;
+}
+a.active.item {
+    border-bottom: 2px solid black !important;
+}
+ul.lista {
+    list-style: none;
+    display: block;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+ul.lista li {
+    display: inline;
+}
+ul.lista li a {
+    padding: 10px;
+    color: black;
+}
+ul.lista li a:hover {
+    text-decoration: underline;
+}
