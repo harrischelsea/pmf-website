@@ -11,14 +11,15 @@ class OglasnePloce extends Component {
     }
 
     render() {
+        const { op } = this.props.op;
         return (
             <div style={{marginTop: '20px'}}>
                 <Grid>
                     <Grid.Column mobile={16} tablet={8} computer={4}>
-                        <Ploce />
+                        <Ploce name='Oglasna ploča' news={op} />
                     </Grid.Column>
                     <Grid.Column mobile={16} tablet={8} computer={4}>
-                        <Ploce />
+                        <Ploce name='Studentska služba' news={op} />
                     </Grid.Column>
                 </Grid>
             </div>

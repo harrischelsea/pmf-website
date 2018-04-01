@@ -29,7 +29,7 @@ export  const getAllOP = () => dispatch => {
     dispatch(getAllOPstarted(true));
     axios.get('/api/get-all-op')
         .then(res => {
-
+            dispatch(getAllOPsuccess(res.data));
         })
         .catch( () => getAllOPfailed('Err!'));
 };

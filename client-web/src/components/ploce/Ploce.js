@@ -5,20 +5,25 @@ import { Segment, Header, List } from 'semantic-ui-react';
 
 class Ploce extends Component {
     render() {
+        const monthNames = ["JAN", "FEB", "MAR", "APR", "MAJ", "JUN",
+            "JUL", "AUG", "SEP", "OKT", "NOV", "DEC"
+        ];
         return (
             <div>
                 <Segment className='ploca'>
-                    <Header className='ploca-heading' size='small'>Oglasna ploča</Header>
+                    <Header className='ploca-heading' size='small'>{this.props.name}</Header>
                     <List>
+                        {this.props.news.map( el =>
                         <List.Item>
                             <div className='date'>
-                                <div className='day'>20</div>
-                                <div className='month'>NOV</div>
+                                <div className='day'>{new Date(el.createdAt).getDate()}</div>
+                                <div className='month'>{monthNames[new Date(el.createdAt).getMonth()]}</div>
                             </div>
                             <div className='news-title'>
-                                Prijava završnih i popravnih ispita za zimski semestar 2017-2018 g.
+                                {el.naslov}
                             </div>
                         </List.Item>
+                        )}
                     </List>
                     <Header className='see-all' size='tiny'>Pogledaj sve...</Header>
                 </Segment>
