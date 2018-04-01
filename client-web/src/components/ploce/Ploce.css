@@ -1,0 +1,60 @@
+div.ui.grid {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+div.four.wide.computer.sixteen.wide.mobile.eight.wide.tablet.column {
+    margin: 0 !important;
+    padding: 10px !important;
+}
+div.ui.segment.ploca {
+    font-family: Arial !important;
+    border: none !important;
+    background-color: white;
+    box-shadow: 2px 2px 5px #888888;
+    overflow: hidden;
+    padding: 0 !important;
+}
+div.ui.list { padding: 5px;}
+div.ui.small.header.ploca-heading {
+    color: #1d92ca !important;
+    padding: 10px;
+    border-bottom: 3px solid #1d92ca;
+}
+div.ui.tiny.header.see-all {
+    background: #1d92ca !important;
+    padding: 10px;
+    color: white !important;
+}
+.date {
+    float: left;
+    box-sizing: border-box;
+    width: 25%;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+.day {
+    background-color:#1d92ca;
+    color:white;
+    text-align:center;
+    padding:4px;
+    font-size:16px;
+}
+.month {
+    color:#124F98;
+    padding:3px;
+    text-align:center;
+    letter-spacing:3px;
+    font-size:15px;
+    background-color:#f2f2f2;
+}
+.news-title {
+    float: left;
+    padding: 5px;
+    box-sizing: border-box;
+    width:75%;
+    font-size: 13px;
+}
+div.news-title:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
