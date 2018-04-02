@@ -23,6 +23,14 @@ class OglasnePloce extends Component {
                     <Grid.Column mobile={16} tablet={8} computer={4}>
                         <Ploce name='Studentska služba' news={sluzba} />
                     </Grid.Column>
+
+
+                    <Grid.Column mobile={16} tablet={8} computer={4}>
+                        <Ploce name='Oglasna ploča' news={oglasna} />
+                    </Grid.Column>
+                    <Grid.Column mobile={16} tablet={8} computer={4}>
+                        <Ploce name='Studentska služba' news={sluzba} />
+                    </Grid.Column>
                 </Grid>
             </div>
         );

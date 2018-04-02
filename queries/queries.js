@@ -6,6 +6,7 @@ async function getAllNews() {
         `SELECT "Vijestis".id, "Vijestis".naslov, "Vijestis".tekst, "Vijestis"."createdAt", 
             "Vijestis".slug, "Vijestis".slika, "Vijestis".kategorija_id,  "Kategorijes".naziv FROM "Vijestis"
             INNER JOIN "Kategorijes" on "Vijestis".kategorija_id = "Kategorijes".id
+            ORDER BY "Vijestis"."createdAt" DESC
         `,
         { type: sequelize.QueryTypes.SELECT});
     return res;

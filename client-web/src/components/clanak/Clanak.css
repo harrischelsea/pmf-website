@@ -1,0 +1,37 @@
+div.ui.segment.segment-clanak {
+    box-shadow: 2px 2px 5px #888888;
+    padding: 5px !important;
+    min-height: 555px;
+}
+div.ui.segment.segment-clanak:hover {
+    box-shadow: 5px 5px 8px #888888;
+    cursor: pointer;
+}
+div.ui.small.header.clanak-istaknuto {
+    padding: 5px;
+    color: #1d92ca;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f2f2f2;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+img.ui.fluid.image.istaknuto-img {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+div.ui.medium.header.clanak-naslov {
+    margin: 0;
+    padding: 10px;
+    color: black;
+    border-bottom: 2px solid #f2f2f2;
+}
+p.clanak-tekst {
+    padding: 10px;
+    text-align: justify;
+}
+div.ui.small.header.clanak-datum {
+    margin: 0;
+    padding: 10px;
+    color: black;
+    border-top: 2px solid #f2f2f2;
+}
