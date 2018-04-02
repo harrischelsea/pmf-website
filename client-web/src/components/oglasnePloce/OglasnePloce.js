@@ -12,14 +12,16 @@ class OglasnePloce extends Component {
 
     render() {
         const { op } = this.props.op;
+        let oglasna = op.filter(el => el.kategorija_id == 1);
+        let sluzba = op.filter(el => el.kategorija_id == 2);
         return (
             <div style={{marginTop: '20px'}}>
                 <Grid>
                     <Grid.Column mobile={16} tablet={8} computer={4}>
-                        <Ploce name='Oglasna ploča' news={op} />
+                        <Ploce name='Oglasna ploča' news={oglasna} />
                     </Grid.Column>
                     <Grid.Column mobile={16} tablet={8} computer={4}>
-                        <Ploce name='Studentska služba' news={op} />
+                        <Ploce name='Studentska služba' news={sluzba} />
                     </Grid.Column>
                 </Grid>
             </div>

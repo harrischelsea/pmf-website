@@ -5,13 +5,14 @@ var models = require('../models');
 var queries = require('../queries/queries');
 
 router.get('/get-all-op', function(req, res, next) {
-    models.Vijesti.findAll({ where: {
-            istaknuto: false
-        }})
-        .then( op => {
-            res.send(op);
-        }).catch(err =>
-            res.status(400).send({err: 'Bad request!'}));
+    queries.getAllNews()
+        .then(news => {
+            console.log(1, news);
+            res.send(news);
+        })
+        .catch(err => {
+            res.status(400).send('err');
+        });
 });
 
 router.get('/get-current-news/:id/:slug', function(req, res, next) {
