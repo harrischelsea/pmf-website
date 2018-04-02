@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+
 import './Menu.css';
 import logo from '../../images/logo.png';
+import { NavLink } from 'react-router-dom';
 import { Container, Grid, Segment, Image, List, Input, Menu } from 'semantic-ui-react';
 
 class MenuPMF extends Component {
@@ -48,7 +50,7 @@ class MenuPMF extends Component {
 
                             <Menu inverted pointing secondary className="navbar-main-menu" stackable fluid compact style={{borderTop:"none"}}>
                                 <Container align="center">
-                                    <Menu.Item name='POČETNA' active={activeItem === 'POČETNA'} content='POČETNA' onClick={this.handleItemClick} />
+                                    <Menu.Item as={NavLink} to='/' name='POČETNA' active={activeItem === 'POČETNA'} content='POČETNA' onClick={this.handleItemClick} />
                                     <Menu.Item name='INFO' active={activeItem === 'INFO'} onClick={this.handleItemClick} />
                                     <Menu.Item name='UPRAVA FAKULTETA' active={activeItem === 'UPRAVA FAKULTETA'} onClick={this.handleItemClick} />
                                     <Menu.Item name='STUDENTSKA SLUŽBA' active={activeItem === 'STUDENTSKA SLUŽBA'} content='STUDENTSKA SLUŽBA' onClick={this.handleItemClick} />

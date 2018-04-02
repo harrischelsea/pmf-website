@@ -25,9 +25,9 @@ export const getCurrentNewsSuccess = (news) => {
     }
 };
 
-export  const getCurrentNews = (id) => dispatch => {
+export  const getCurrentNews = (id, slug) => dispatch => {
     dispatch(getCurrentNewsStarted(true));
-    axios.get('/api/get-current-news/' + id)
+    axios.get('/api/get-current-news/' + id + '/' + slug)
         .then(res => {
             dispatch(getCurrentNewsSuccess(res.data));
         })

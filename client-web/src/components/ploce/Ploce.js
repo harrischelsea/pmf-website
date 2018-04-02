@@ -15,7 +15,7 @@ class Ploce extends Component {
                     <Header className='ploca-heading' size='small'>{this.props.name}</Header>
                     <List>
                         {this.props.news.map( el =>
-                        <List.Item as={NavLink} to={'/vijest/' + el.id}>
+                        <List.Item as={NavLink} to={'/vijest/' + el.id + '/' + el.slug}>
                             <div className='date'>
                                 <div className='day'>{new Date(el.createdAt).getDate()}</div>
                                 <div className='month'>{monthNames[new Date(el.createdAt).getMonth()]}</div>

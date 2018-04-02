@@ -1,0 +1,44 @@
+div.ui.segment.clanak {
+    margin: 20px;
+    box-shadow: 5px 5px 8px #888888;
+}
+div.ui.small.header.vijest-heading {
+    color: black !important;
+    padding: 10px;
+    margin: 0 !important;
+    border-bottom: 2px solid #f2f2f2;
+    font-size: 24px;
+    font-family: Consolas;
+}
+div.ui.small.header.vijest-category {
+    color: #1d92ca !important;
+    padding: 10px;
+    text-transform: uppercase;
+    margin: 0 !important;
+    padding-bottom: 0;
+    font-size: 14px;
+}
+p.vijest-text {
+    padding: 20px;
+    text-align: justify;
+    border-bottom: 2px solid #f2f2f2;
+}
+div.info {
+    padding: 10px;
+    color: #222222;
+    font-size: 13px;
+}
+span.info-admin {
+    color: #124F98;
+    padding-right: 10px;
+    border-right: 1px solid grey;
+}
+span.info-date {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-right: 1px solid grey;
+}
+span.info-time {
+    padding-left: 10px;
+    padding-right: 10px;
+}

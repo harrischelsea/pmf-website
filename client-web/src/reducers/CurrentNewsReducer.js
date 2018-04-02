@@ -18,7 +18,7 @@ export default (state = INITIAL_STATE, action) => {
         case GET_CURRENT_NEWS_FAILED:
             return {...state, error: action.payload, loading: false };
         case GET_CURRENT_NEWS_SUCCESS:
-            return {...state, op: action.payload, loading: false, successNews: true };
+            return {...state, currentNews: action.payload, loading: false, successNews: true };
         default:
             return state;
     }
