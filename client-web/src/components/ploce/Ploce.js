@@ -10,7 +10,7 @@ class Ploce extends Component {
             "JUL", "AUG", "SEP", "OKT", "NOV", "DEC"
         ];
         return (
-            <div>
+            <div style={{height: '100%'}}>
                 <Segment className='ploca'>
                     <Header className='ploca-heading' size='small'>{this.props.name}</Header>
                     <List>

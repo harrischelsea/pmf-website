@@ -16,7 +16,8 @@ class OglasnePloce extends Component {
         let sluzba = op.filter(el => el.kategorija_id == 2);
         return (
             <div style={{marginTop: '20px'}}>
-                <Grid>
+                <Grid style={{minHeight: '300px'}}>
+                    <Grid.Row>
                     <Grid.Column mobile={16} tablet={8} computer={4}>
                         <Ploce name='Oglasna ploča' news={oglasna} />
                     </Grid.Column>
@@ -31,6 +32,7 @@ class OglasnePloce extends Component {
                     <Grid.Column mobile={16} tablet={8} computer={4}>
                         <Ploce name='Studentska služba' news={sluzba} />
                     </Grid.Column>
+                    </Grid.Row>
                 </Grid>
             </div>
         );

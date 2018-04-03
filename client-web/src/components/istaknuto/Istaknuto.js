@@ -9,7 +9,7 @@ class Istaknuto extends Component {
     render() {
         return (
             <div>
-                <Grid>
+                <Grid style={{minHeight: '300px'}}>
                     <Grid.Column mobile={16} tablet={8} computer={4}>
                         <Odsjeci />
                     </Grid.Column>

@@ -13,18 +13,23 @@ div.ui.segment.ploca {
     box-shadow: 2px 2px 5px #888888;
     overflow: hidden;
     padding: 0 !important;
+    height: 100%;
 }
-div.ui.list { padding: 5px;}
+div.ui.list { padding: 5px; height: calc(90% - 88px) !important; box-sizing: border-box}
 div.ui.small.header.ploca-heading {
     color: #1d92ca !important;
     padding: 10px;
     border-bottom: 3px solid #1d92ca;
     text-transform: uppercase;
+    height: 40px;
+    box-sizing: border-box;
 }
 div.ui.tiny.header.see-all {
     background: #1d92ca !important;
     padding: 10px;
     color: white !important;
+    height: 40px;
+    box-sizing: border-box;
 }
 .date {
     float: left;

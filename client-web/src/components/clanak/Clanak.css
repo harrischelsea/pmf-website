@@ -1,7 +1,8 @@
 div.ui.segment.segment-clanak {
     box-shadow: 2px 2px 5px #888888;
     padding: 5px !important;
-    min-height: 555px;
+    height: 100%;
+    position: relative;
 }
 div.ui.segment.segment-clanak:hover {
     box-shadow: 5px 5px 8px #888888;
@@ -28,10 +29,14 @@ div.ui.medium.header.clanak-naslov {
 p.clanak-tekst {
     padding: 10px;
     text-align: justify;
+    margin-bottom: 40px;
 }
 div.ui.small.header.clanak-datum {
     margin: 0;
     padding: 10px;
     color: black;
     border-top: 2px solid #f2f2f2;
+    position: absolute;
+    bottom: 0;
+    height: 40px;
 }

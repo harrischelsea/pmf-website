@@ -6,7 +6,7 @@ import { Segment, Header, Icon, Image } from 'semantic-ui-react';
 class Clanak extends Component {
     render() {
         return (
-            <div>
+            <div style={{height: '100%'}}>
                 <Segment className='segment-clanak'>
                     <Header className='clanak-istaknuto' size='small'>
                         <Icon className='pin' style={{fontSize: '14px'}} />
@@ -16,7 +16,7 @@ class Clanak extends Component {
                     <Image className='istaknnuto-img' fluid src='default.jpg' />
 
                     <Header className='clanak-naslov' size='medium'>
-                        NASLOV
+                        NASLOV koji se sastoji od vise redova aaa aa aa aa  aa
                     </Header>
 
                     <p className='clanak-tekst'>

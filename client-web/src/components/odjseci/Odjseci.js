@@ -7,7 +7,7 @@ import { Icon, Header } from 'semantic-ui-react';
 class Odsjeci extends Component {
     render() {
         return (
-            <div>
+            <div style={{height: '100%'}}>
                 <Segment className='odsjeci'>
                     <Header className='odsjeci-naslov' size='small'>
                         ODSJECI

@@ -1,7 +1,7 @@
 div.ui.segment.odsjeci {
     background: #1d92ca !important;
     color: white !important;
-    min-height: 555px;
+    height: 100%;
 }
 ul.odsjeci-menu {
     list-style: none;
