@@ -12,6 +12,8 @@ import { withRouter } from 'react-router-dom';
 class Vijest extends Component {
 
     componentDidMount() {
+        //this.start.scrollIntoView();
+        window.scrollTo(0, 0);
         this.props.getAllOP();
         this.props.getCurrentNews(this.props.match.params.id, this.props.match.params.slug);
     }
@@ -21,7 +23,7 @@ class Vijest extends Component {
         const { currentNews } = this.props.currentNews;
         let catNews = this.props.op.op.filter(el =>  el.id != this.props.match.params.id);
         return (
-            <div>
+            <div ref={(div) => this.start = div}>
                 <Container>
                     <Segment className='clanak'>
                     <Grid>

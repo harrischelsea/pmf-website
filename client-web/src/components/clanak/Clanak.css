@@ -13,7 +13,7 @@ div.ui.small.header.clanak-istaknuto {
     color: #1d92ca;
     padding-bottom: 10px;
     border-bottom: 2px solid #f2f2f2;
-    margin-bottom: 0;
+    margin-bottom: 5px;
     font-size: 14px;
 }
 img.ui.fluid.image.istaknuto-img {
@@ -30,6 +30,7 @@ p.clanak-tekst {
     padding: 10px;
     text-align: justify;
     margin-bottom: 40px;
+    color: black;
 }
 div.ui.small.header.clanak-datum {
     margin: 0;
@@ -39,4 +40,6 @@ div.ui.small.header.clanak-datum {
     position: absolute;
     bottom: 0;
     height: 40px;
+    width: 100%;
+    left: 0;
 }

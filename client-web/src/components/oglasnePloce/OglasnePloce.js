@@ -15,7 +15,7 @@ class OglasnePloce extends Component {
         let oglasna = op.filter(el => el.kategorija_id == 1);
         let sluzba = op.filter(el => el.kategorija_id == 2);
         return (
-            <div style={{marginTop: '20px'}}>
+            <div>
                 <Grid style={{minHeight: '300px'}}>
                     <Grid.Row>
                     <Grid.Column mobile={16} tablet={8} computer={4}>

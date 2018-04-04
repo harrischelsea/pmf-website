@@ -23,6 +23,9 @@ class Odsjeci extends Component {
                         <li><a href='#'><Icon className='table'/>Raspored</a></li>
                         <li><a href='#'><Icon className='tasks'/>Literatura</a></li>
                         <li><a href='#'><Icon className='file text outline'/>Ocjenjivanje</a></li>
+                        <br/>
+                        <li><a href='#'>JAVNE NABAVKE</a></li>
+                        <li><a href='#'>OSIGURANJE KVALITETA</a></li>
                     </ul>
                 </Segment>
             </div>

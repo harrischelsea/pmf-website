@@ -1,0 +1,15 @@
+div.ui.segment.footer {
+    background: #222222;
+    color: white;
+    padding-top: 30px;
+}
+div.ui.list.footer-menu {
+    padding-left: 30px;
+    color: darkgrey;
+    border-right: 2px dotted #888888;
+    min-height: 130px;
+}
+div.ui.small.header.footer-menu-heading {
+    color: white;
+    padding-left: 10px;
+}

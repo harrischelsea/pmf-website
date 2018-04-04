@@ -39,4 +39,14 @@ router.get('/get-current-news/:id/:slug', function(req, res, next) {
 
 });
 
+router.get('/get-all-highlights', function(req, res, next) {
+    models.Vijesti.findAll({ where: { istaknuto: true }, order: [['createdAt', 'DESC']] })
+        .then( istaknuto => {
+            console.log(1, istaknuto);
+            res.send(istaknuto);
+        })
+        .catch(err =>
+            res.status(400).send({err: 'Bad request!'}));
+});
+
 module.exports = router;

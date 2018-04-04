@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 import './Clanak.css';
+import Moment from 'react-moment';
+import 'moment-timezone';
+import 'moment/locale/hr';
 import { Segment, Header, Icon, Image } from 'semantic-ui-react';
 
 class Clanak extends Component {
@@ -13,19 +16,21 @@ class Clanak extends Component {
                         ISTAKNUTO
                     </Header>
 
-                    <Image className='istaknnuto-img' fluid src='default.jpg' />
+                    <Image className='istaknnuto-img' fluid src={this.props.image} />
 
                     <Header className='clanak-naslov' size='medium'>
-                        NASLOV koji se sastoji od vise redova aaa aa aa aa  aa
+                        {this.props.title}
                     </Header>
 
                     <p className='clanak-tekst'>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        {this.props.text.substring(0, 320) + '...'}
                     </p>
 
                     <Header className='clanak-datum' size='small'>
-                        <Icon className='time outline'/>
-                        datum
+                        <span><Icon className='time outline' /></span>
+                        <Moment element='span' locale='hr' tz='Europe/Sarajevo' fromNow>
+                            {this.props.date}
+                        </Moment>
                     </Header>
                 </Segment>
             </div>
