@@ -2,18 +2,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Grid } from 'semantic-ui-react';
 import Ploce from '../ploce/Ploce';
-import {getAllOP} from "../../actions/OPactions";
+import {getAllOP, getAllSS} from "../../actions/OPactions";
+import { withRouter } from 'react-router-dom';
 
 class OglasnePloce extends Component {
 
     componentDidMount() {
         this.props.getAllOP();
+        this.props.getAllSS();
     }
 
     render() {
-        const { op } = this.props.op;
-        let oglasna = op.filter(el => el.kategorija_id == 1);
-        let sluzba = op.filter(el => el.kategorija_id == 2);
+        const { op, ss } = this.props.op;
+        let oglasna = op;
+        let sluzba = ss;
         return (
             <div>
                 <Grid style={{minHeight: '300px'}}>
@@ -39,10 +41,10 @@ class OglasnePloce extends Component {
     }
 }
 
-const mapStateToProps = ({ op }) => {
+const mapStateToProps = ({ op}) => {
     return { op };
 };
-export default connect(mapStateToProps, {
-    getAllOP
-})(OglasnePloce);
+export default withRouter(connect(mapStateToProps, {
+    getAllOP, getAllSS
+})(OglasnePloce));
 

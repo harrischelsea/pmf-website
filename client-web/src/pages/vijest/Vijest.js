@@ -5,23 +5,36 @@ import Najnovije from '../../components/najnovije/Najnovije';
 import { Segment, Header, Container, Grid, Image, Icon, List } from 'semantic-ui-react';
 import {connect} from "react-redux";
 import { getCurrentNews } from "../../actions/CurrentNewsActions";
-import { getAllOP } from "../../actions/OPactions";
+import { getAllOP, getAllSS } from "../../actions/OPactions";
 import { NavLink, Link } from "react-router-dom";
 import { withRouter } from 'react-router-dom';
 
 class Vijest extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            id: 0,
+        }
+    }
 
     componentDidMount() {
         //this.start.scrollIntoView();
         window.scrollTo(0, 0);
         this.props.getAllOP();
+        this.props.getAllSS();
         this.props.getCurrentNews(this.props.match.params.id, this.props.match.params.slug);
     }
+
+    setID = () => {
+      this.setState({id: this.props.match.params.id});
+    };
 
     render() {
         if (this.props.loading) { return <div>LOADING...</div>}
         const { currentNews } = this.props.currentNews;
-        let catNews = this.props.op.op.filter(el =>  el.id != this.props.match.params.id);
+        const { op, ss } = this.props.op;
+        let catNews = op.concat(ss);
+        catNews = catNews.filter(el =>  el.id != this.props.match.params.id);
         return (
             <div ref={(div) => this.start = div}>
                 <Container>
@@ -54,7 +67,10 @@ class Vijest extends Component {
 
                             <Image className='vijest-img' src={'/' + currentNews.slika } fluid />
 
-                            <p className='vijest-text'>{currentNews.tekst}</p>
+                            <p className='vijest-text'
+                               dangerouslySetInnerHTML={{__html: String(currentNews.tekst) }} />
+
+
                         </Grid.Column>
                         <Grid.Column mobile={16} tablet={6} computer={6}>
                             <Header className='ploca-heading' size='small'>NAJNOVIJE</Header>
@@ -90,5 +106,5 @@ const mapStateToProps = ({ currentNews, op }) => {
     return { currentNews, op };
 };
 export default withRouter(connect(mapStateToProps, {
-    getCurrentNews, getAllOP
+    getCurrentNews, getAllOP, getAllSS,
 })(Vijest));

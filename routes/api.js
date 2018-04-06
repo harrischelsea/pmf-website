@@ -5,10 +5,20 @@ var models = require('../models');
 var queries = require('../queries/queries');
 
 router.get('/get-all-op', function(req, res, next) {
-    queries.getAllNews()
+    queries.getAllOPnews()
         .then(news => {
             console.log(1, news);
             res.send(news);
+        })
+        .catch(err => {
+            res.status(400).send('err');
+        });
+});
+
+router.get('/get-all-ss', function(req, res, next) {
+    queries.getAllSSnews()
+        .then(ss => {
+            res.send(ss);
         })
         .catch(err => {
             res.status(400).send('err');

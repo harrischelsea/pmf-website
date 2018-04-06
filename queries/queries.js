@@ -1,12 +1,24 @@
 var db = require('../models');
 var sequelize = db.sequelize;
 
-async function getAllNews() {
+async function getAllOPnews() {
     let res =  await sequelize.query(
         `SELECT "Vijestis".id, "Vijestis".naslov, "Vijestis".tekst, "Vijestis"."createdAt", 
             "Vijestis".slug, "Vijestis".slika, "Vijestis".kategorija_id,  "Kategorijes".naziv FROM "Vijestis"
             INNER JOIN "Kategorijes" on "Vijestis".kategorija_id = "Kategorijes".id
-            WHERE "Vijestis".istaknuto = 'false'
+            WHERE "Vijestis".istaknuto = 'false' AND "Vijestis".kategorija_id = 1
+            ORDER BY "Vijestis"."createdAt" DESC
+        `,
+        { type: sequelize.QueryTypes.SELECT});
+    return res;
+}
+
+async function getAllSSnews() {
+    let res =  await sequelize.query(
+        `SELECT "Vijestis".id, "Vijestis".naslov, "Vijestis".tekst, "Vijestis"."createdAt", 
+            "Vijestis".slug, "Vijestis".slika, "Vijestis".kategorija_id,  "Kategorijes".naziv FROM "Vijestis"
+            INNER JOIN "Kategorijes" on "Vijestis".kategorija_id = "Kategorijes".id
+            WHERE "Vijestis".istaknuto = 'false' AND "Vijestis".kategorija_id = 2
             ORDER BY "Vijestis"."createdAt" DESC
         `,
         { type: sequelize.QueryTypes.SELECT});
@@ -26,5 +38,6 @@ async function getCurrentNews(id, slug) {
 
 module.exports = {
     getCurrentNews: getCurrentNews,
-    getAllNews: getAllNews,
+    getAllOPnews: getAllOPnews,
+    getAllSSnews: getAllSSnews,
 };

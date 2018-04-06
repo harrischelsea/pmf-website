@@ -22,9 +22,9 @@ class Clanak extends Component {
                         {this.props.title}
                     </Header>
 
-                    <p className='clanak-tekst'>
-                        {this.props.text.substring(0, 320) + '...'}
-                    </p>
+                    <p className='clanak-tekst'
+                       dangerouslySetInnerHTML={{__html: this.props.text.substring(0, 320) + '...' }} />
+
 
                     <Header className='clanak-datum' size='small'>
                         <span><Icon className='time outline' /></span>

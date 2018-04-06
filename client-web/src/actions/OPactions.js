@@ -6,6 +6,9 @@ export const GET_ALL_OP_NEWS_SUCCESS = "GET_ALL_OP_NEWS_SUCCESS";
 export const GET_ALL_HIGHLIGHTS_STARTED = "GET_ALL_HIGHLIGHTS_STARTED";
 export const GET_ALL_HIGHLIGHTS_FAILED = "GET_ALL_HIGHLIGHTS_FAILED";
 export const GET_ALL_HIGHLIGHTS_SUCCESS = "GET_ALL_HIGHLIGHTS_SUCCESS";
+export const GET_ALL_SS_STARTED = "GET_ALL_SS_STARTED";
+export const GET_ALL_SS_FAILED = "GET_ALL_SS_FAILED";
+export const GET_ALL_SS_SUCCESS = "GET_ALL_HSS_SUCCESS";
 
 export const getAllOPstarted = (loading) => {
     return {
@@ -65,4 +68,34 @@ export  const getAllHighlights = () => dispatch => {
             dispatch(getAllHighlightsSuccess(res.data));
         })
         .catch( () => getAllHighlightsFailed('Err!'));
+};
+
+export const getAllSSstarted = (loading) => {
+    return {
+        type: GET_ALL_SS_STARTED,
+        payload: loading
+    }
+};
+
+export const getAllSSfailed = (error) => {
+    return {
+        type: GET_ALL_SS_FAILED,
+        payload: error
+    }
+};
+
+export const getAllSSsuccess = (ss) => {
+    return {
+        type: GET_ALL_SS_SUCCESS,
+        payload: ss
+    }
+};
+
+export  const getAllSS = () => dispatch => {
+    dispatch(getAllSSstarted(true));
+    axios.get('/api/get-all-ss')
+        .then(res => {
+            dispatch(getAllSSsuccess(res.data));
+        })
+        .catch( () => getAllSSfailed('Err!'));
 };
