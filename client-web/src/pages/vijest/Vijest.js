@@ -76,7 +76,7 @@ class Vijest extends Component {
                             <Header className='ploca-heading' size='small'>NAJNOVIJE</Header>
                             <List>
                                 {catNews.map(el =>
-                                    <Link to={'/vijest/' + el.id + '/' + el.slug}>
+                                    <Link key={el.id} to={'/vijest/' + el.id + '/' + el.slug}>
                                     <List.Item className='lista-najnovije'>
                                         <div className='list-category'>
                                             {el.naziv}

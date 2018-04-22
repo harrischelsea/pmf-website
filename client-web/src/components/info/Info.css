@@ -1,0 +1,43 @@
+div.ui.segment.segment-info {
+    box-shadow: 2px 2px 5px #888888;
+    padding: 0 !important;
+    height: 100%;
+    position: relative;
+    padding-bottom: 10px !important;
+}
+div.ui.segment.segment-radnovrijeme {
+    background-color: #495a75 !important;
+    color: white !important;
+    text-align: center;
+    padding: 10px !important;
+    box-shadow: 2px 2px 5px #888888;
+    height: 100%;
+    position: relative;
+    padding-bottom: 15px !important;
+}
+div.ui.small.header.info-title {
+    padding: 5px;
+    color: white;
+    margin-bottom: 5px;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 2px;
+    background: #1d92ca !important;
+}
+div.ui.list.info {
+    padding: 15px;
+    padding-top: 5px;
+    margin: 0;
+    padding-bottom: 0;
+}
+div.ui.list.info > div.item {
+    font-size: 14px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+div.ziroracun {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+}
