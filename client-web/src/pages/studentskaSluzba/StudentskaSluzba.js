@@ -23,7 +23,7 @@ class StudentskaSluzba extends Component {
 
     render() {
         return (
-            <div>
+            <div style={{marginTop: '10px', marginBottom: '10px'}}>
                 <Container>
                 <Grid>
                     <Grid.Column mobile={16} tablet={8} computer={4}>
