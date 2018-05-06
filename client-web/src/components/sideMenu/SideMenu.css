@@ -1,0 +1,5 @@
+div.ui.fluid.vertical.side-menu.menu > a.item {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}

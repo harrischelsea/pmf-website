@@ -13,16 +13,21 @@ class Vijest extends Component {
     constructor(props){
         super(props);
         this.state = {
-            id: 0,
+            id: this.props.match.params.id,
+            slug: this.props.match.params.slug,
         }
     }
+
+    handleActiveNews = (id, slug) => {
+        this.props.getCurrentNews(id, slug);
+    };
 
     componentDidMount() {
         //this.start.scrollIntoView();
         window.scrollTo(0, 0);
         this.props.getAllOP();
         this.props.getAllSS();
-        this.props.getCurrentNews(this.props.match.params.id, this.props.match.params.slug);
+        this.props.getCurrentNews(this.state.id, this.state.slug);
     }
 
     setID = () => {
@@ -45,7 +50,7 @@ class Vijest extends Component {
                                 {currentNews.naziv}
                                 <Icon
                                     style={{float: 'right', color: 'black', fontSize: '14px'}}
-                                    className='list layout'/>
+                                    className='circle'/>
                             </Header>
                             <Header className='vijest-heading' size='small'>{currentNews.naslov}</Header>
 
@@ -76,7 +81,10 @@ class Vijest extends Component {
                             <Header className='ploca-heading' size='small'>NAJNOVIJE</Header>
                             <List>
                                 {catNews.map(el =>
-                                    <Link key={el.id} to={'/vijest/' + el.id + '/' + el.slug}>
+                                    <Link
+                                        key={el.id}
+                                        onClick={() => this.handleActiveNews(el.id, el.slug)}
+                                        to={'/vijest/' + el.id + '/' + el.slug} >
                                     <List.Item className='lista-najnovije'>
                                         <div className='list-category'>
                                             {el.naziv}

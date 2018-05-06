@@ -1,6 +1,7 @@
 div.ui.segment.clanak {
     margin: 20px;
     box-shadow: 5px 5px 8px #888888;
+    overflow: hidden;
 }
 div.ui.small.header.vijest-heading {
     color: black !important;

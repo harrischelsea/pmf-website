@@ -1,0 +1,16 @@
+ul.uprava-lista {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ul.uprava-lista li {
+    padding: 5px;
+}
+
+div.ui.horizontal.segments {
+    border: none !important;
+    box-shadow: none;
+}
+div.ui.horizontal.segments > div.ui.basic.compact.segment {
+    border: none;
+}

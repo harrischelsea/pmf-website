@@ -6,57 +6,62 @@ import { Segment, Header, List } from 'semantic-ui-react';
 class Info extends Component {
 
     render() {
+        const { info } = this.props;
         return (
             <div>
+                {info.msg
+                    ?
                 <Segment className='segment-radnovrijeme'>
-                    Radno vrijeme sa studentima/strankama je svaki radni dan (pon-pet) od 11:00-13:00 sati.
+                    {info.msg}
                 </Segment>
+                    : ''
+                }
                 <Segment className='segment-info'>
                     <Header className='info-title' size='small'>
-                        STUDENTSKA SLUŽBA
+                        {info.naziv}
                     </Header>
 
                     <List className='info'>
                         <List.Item>
                             <List.Icon name='marker' />
-                            <List.Content>Ulica Zmaja od Bosne 33-35</List.Content>
+                            <List.Content>{info.adresa}</List.Content>
                         </List.Item>
                         <List.Item>
                             <List.Icon name='marker' />
-                            <List.Content>71000 Sarajevo</List.Content>
+                            <List.Content>{info.postcode}</List.Content>
                         </List.Item>
+                        {info.tel.map( el =>
                         <List.Item>
                             <List.Icon name='call' />
                             <List.Content>
-                                + 387 33 27 99 85
+                                {el}
                             </List.Content>
                         </List.Item>
-                        <List.Item>
-                            <List.Icon name='call' />
-                            <List.Content>
-                                + 387 33 72 37 67
-                            </List.Content>
-                        </List.Item>
+                        )}
                         <List.Item>
                             <List.Icon name='mail' />
                             <List.Content>
-                                stsluzba@pmf.unsa.ba
+                                {info.mail}
                             </List.Content>
                         </List.Item>
                     </List>
 
                 </Segment>
 
+                {info.ziro
+                ?
                 <Segment className='segment-info'>
-                    <Header className='info-title' size='small'>
-                        ŽIRO RAČUN UNIVERZITETA
-                    </Header>
-                    <div className='ziroracun'>3383202250621169</div>
-                    <Header className='info-title' size='small'>
-                        ŽIRO RAČUN PMF-a
-                    </Header>
-                    <div className='ziroracun'>1610000036020088</div>
+                    {info.ziro.map( el =>
+                        <div style={{marginBottom: '20px'}}>
+                            <Header className='info-title' size='small'>
+                                {el.naslov}
+                            </Header>
+                            <div className='ziroracun'>{el.racun}</div>
+                            </div>
+                        )}
                 </Segment>
+                : ''
+                }
             </div>
         );
     }

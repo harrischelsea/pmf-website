@@ -6,7 +6,7 @@ import {
 
 const INITIAL_STATE = {
     currentNews: {},
-    loading: false,
+    loading: true,
     error: '',
     successNews: false,
 };

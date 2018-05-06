@@ -1,0 +1,27 @@
+div.ui.segment.segment-info {
+    box-shadow: 2px 2px 5px #888888;
+    padding: 0 !important;
+    height: 100%;
+    position: relative;
+    padding-bottom: 10px !important;
+    margin-bottom: 20px !important;
+}
+div.ui.small.header.info-title {
+    padding: 5px;
+    color: white;
+    margin-bottom: 5px;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 2px;
+    background: #1d92ca !important;
+}
+h3.sefica {
+    text-align: center;
+    font-size: 14px;
+    margin: 10px;
+    padding: 0;
+}
+h3.informacije {
+    font-size: 12px;
+    padding: 5px;
+}

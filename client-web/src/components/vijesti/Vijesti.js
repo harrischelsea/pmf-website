@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import './Vijesti.css';
 import Moment from 'react-moment';
+import { Link } from 'react-router-dom';
 import { Segment, Image, Pagination, Icon } from 'semantic-ui-react';
 
 class Vijesti extends Component {
@@ -9,10 +10,15 @@ class Vijesti extends Component {
     render() {
         return (
             <div>
+                <Segment className='ss-naslov'>
+                    STUDENTSKA SLUŽBA | Vijesti
+                </Segment>
                 {this.props.vijesti
                     ?
                     this.props.vijesti.map(el =>
-                        <div>
+                            <Link
+                                key={el.id}
+                                to={'/vijest/' + el.id + '/' + el.slug} >
                             <Segment className='segment-vijest' key={el.id}>
                                 <Image src='default.jpg' spaced='left' size='small' />
                                 <div className='vijest-naslov'>{el.naslov}</div>
@@ -20,7 +26,7 @@ class Vijesti extends Component {
                                     {el.createdAt}
                                 </Moment>
                             </Segment>
-                        </div>
+                            </Link>
                     )
                     :
                     ''
