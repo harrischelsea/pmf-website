@@ -50,7 +50,7 @@ class MenuPMF extends Component {
                             <Menu inverted pointing secondary className="navbar-main-menu" stackable fluid compact style={{borderTop:"none"}}>
                                 <Container align="center">
                                     <Menu.Item as={NavLink} to='/' name='POČETNA' active={activeItem === 'POČETNA'} content='POČETNA' onClick={this.handleItemClick} />
-                                    <Menu.Item name='INFO' active={activeItem === 'INFO'} onClick={this.handleItemClick} />
+                                    <Menu.Item name='INFO' as={NavLink} to='/info' active={activeItem === 'INFO'} onClick={this.handleItemClick} />
                                     <Menu.Item as={NavLink} to='/uprava-fakulteta' name='UPRAVA FAKULTETA' active={activeItem === 'UPRAVA FAKULTETA'} onClick={this.handleItemClick} />
                                     <Menu.Item as={NavLink} to='/studentska-sluzba' name='STUDENTSKA SLUŽBA' active={activeItem === 'STUDENTSKA SLUŽBA'} content='STUDENTSKA SLUŽBA' onClick={this.handleItemClick} />
                                     <Menu.Item as={NavLink} to='/biblioteka' name='BIBLIOTEKA' active={activeItem === 'BIBLIOTEKA'} onClick={this.handleItemClick} />

@@ -25,6 +25,16 @@ async function getAllSSnews() {
     return res;
 }
 
+async function countSS() {
+    let res =  await sequelize.query(
+        `SELECT Count("Vijestis".id) as Number 
+            WHERE "Vijestis".istaknuto = 'false' AND "Vijestis".kategorija_id = 2
+            ORDER BY "Vijestis"."createdAt" DESC
+        `,
+        { type: sequelize.QueryTypes.SELECT});
+    return res;
+}
+
 async function getCurrentNews(id, slug) {
     let res =  await sequelize.query(
         `SELECT * FROM "Vijestis"
@@ -40,4 +50,5 @@ module.exports = {
     getCurrentNews: getCurrentNews,
     getAllOPnews: getAllOPnews,
     getAllSSnews: getAllSSnews,
+    countSS: countSS,
 };

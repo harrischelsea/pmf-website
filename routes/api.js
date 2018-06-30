@@ -4,6 +4,9 @@ var router = express.Router();
 var models = require('../models');
 var queries = require('../queries/queries');
 
+var sequelize = models.sequelize;
+
+
 router.get('/get-all-op', function(req, res, next) {
     queries.getAllOPnews()
         .then(news => {
@@ -58,5 +61,26 @@ router.get('/get-all-highlights', function(req, res, next) {
         .catch(err =>
             res.status(400).send({err: 'Bad request!'}));
 });
+
+router.get('/get-all', function(req, res, next) {
+    models.Vijesti.findAll({
+        attributes: [[sequelize.fn('COUNT', sequelize.col('id')), 'number']], where: {kategorija_id: 2}
+    })
+        .then( n => {
+            models.Vijesti.findAll({
+                where: { kategorija_id: 2 }, order: [['createdAt', 'DESC']], offset: 1, limit: 1
+            })
+                .then( v => {
+                    console.log(1, v);
+                    res.send({v, n});
+                })
+                .catch(err =>
+                    res.status(400).send({err: 'Bad request!'}));
+        })
+        .catch(err =>
+            res.status(400).send({err: 'Bad request!'}));
+
+});
+
 
 module.exports = router;
